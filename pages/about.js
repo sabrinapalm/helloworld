@@ -1,3 +1,3 @@
 export default () => (
-  <div>About us</div>
+  <div>We are the world, Johan Augustsson & Sabrina Palm</div>
 )
