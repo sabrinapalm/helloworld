@@ -26,7 +26,6 @@ const style = {
     width: 200,
     marginTop: 20,
     backgroundColor: 'rgba(0, 0, 0, 0.3)',
-    padding: 5,
     border: '2px solid white',
     borderRadius: 4,
     cursor: 'pointer'
