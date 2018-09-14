@@ -12,13 +12,28 @@ const style = {
   },
   imgStyle: {
     margin: '300px auto',
-    marginBottom: '0px'
+    marginBottom: '0px',
   },
   textStyle: {
     fontFamily:'Helvetica',
     fontWeight: 'bold',
     color: 'white',
     fontSize: '16px',
+    letterSpacing: '1px'
+  },
+  buttonStyle: {
+    width: 200,
+    marginTop: 20,
+    backgroundColor: 'rgba(0, 0, 0, 0.3)',
+    padding: 5,
+    border: '2px solid white',
+    borderRadius: 4,
+    cursor: 'pointer'
+  },
+  buttonText: {
+    fontFamily:'Helvetica',
+    fontWeight: 'bold',
+    color: 'white',
     letterSpacing: '1px'
   }
 }
@@ -29,5 +44,8 @@ export default (props) => (
       <br />
       <p style={style.textStyle}>{'Johan Augustsson & Sabrina Palm'.toUpperCase()}</p>
       {/* <Link href='/about'><a>ABOUT US</a></Link> */}
+      <button style={style.buttonStyle}>
+        <p style={style.buttonText}>ADD YOUR TRIP</p>
+      </button>
   </div>
 )
