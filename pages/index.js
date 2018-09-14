@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import GlobalStyle from '../components/globalStyle'
 
-const logo = 'https://image.ibb.co/igxefU/logo.png';
+const logo = 'https://image.ibb.co/dr1p0U/logowhitebig.png';
 
 const style = {
   backgroundImage: {
@@ -12,7 +12,7 @@ const style = {
     textAlign: 'center'
   },
   imgStyle: {
-    margin: '300px auto',
+    margin: '335px auto',
     marginBottom: '0px',
   },
   textStyle: {
@@ -44,9 +44,10 @@ export default (props) => (
       <img style={style.imgStyle} src={logo} alt="Logo" />
       <br />
       <p style={style.textStyle}>{'Johan Augustsson & Sabrina Palm'.toUpperCase()}</p>
-      {/* <Link href='/about'><a>ABOUT US</a></Link> */}
+      <Link href='/about'>
       <button style={style.buttonStyle}>
-        <p style={style.buttonText}>ADD YOUR TRIP</p>
+        <p style={style.buttonText}>LOREM IPSUM</p>
       </button>
+      </Link>
   </div>
 )

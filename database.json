@@ -1,9 +1,26 @@
 {
-  "13232323" : {
+  "1" : {
+    "id": "1",
     "name": "Sabrina",
     "when": 1536848486882,
-    "title": "My awsome trip to Gothenburg",
+    "title": "My awesome trip to Gothenburg",
     "text": "Eat and run on the roads in Gothenburg",
-    "city": "Gothenburg",
+    "city": "Gothenburg"
+  },
+  "2" : {
+    "id": "2",
+    "name": "Johan",
+    "when": 1536848486882,
+    "title": "My awesome trip to Gothenburg",
+    "text": "Eat and run on the roads in Gothenburg",
+    "city": "Gothenburg"
+  },
+  "3" : {
+    "id": "3",
+    "name": "Simba",
+    "when": 1536848486882,
+    "title": "My awseome trip to Gothenburg",
+    "text": "Eat and run on the roads in Gothenburg",
+    "city": "Gothenburg"
   }
 }

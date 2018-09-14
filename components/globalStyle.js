@@ -1,5 +1,3 @@
-
-
 const GlobalStyle = ()=> (
   <style jsx global>{`
       body {
