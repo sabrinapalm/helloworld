@@ -1,4 +1,5 @@
-import Link from 'next/link'
+import Link from 'next/link';
+import GlobalStyle from '../components/globalStyle'
 
 const logo = 'https://image.ibb.co/igxefU/logo.png';
 
@@ -40,6 +41,7 @@ const style = {
 
 export default (props) => (
   <div style={style.backgroundImage}>
+      <GlobalStyle />
       <img style={style.imgStyle} src={logo} alt="Logo" />
       <br />
       <p style={style.textStyle}>{'Johan Augustsson & Sabrina Palm'.toUpperCase()}</p>
