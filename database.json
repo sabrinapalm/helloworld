@@ -1,26 +1,18 @@
 {
   "1" : {
     "id": "1",
-    "name": "Sabrina",
-    "when": 1536848486882,
     "title": "My awesome trip to Gothenburg",
-    "text": "Eat and run on the roads in Gothenburg",
-    "city": "Gothenburg"
+    "description": "Eat and run on the roads in Gothenburg",
+    "name": "Sabrina",
+    "city": "Gothenburg",
+    "date": 1536848486882,
   },
   "2" : {
     "id": "2",
+    "title": "My awesome trip to Copenhagen",
+    "description": "Eat and run on the roads in Copenhagen",
     "name": "Johan",
-    "when": 1536848486882,
-    "title": "My awesome trip to Gothenburg",
-    "text": "Eat and run on the roads in Gothenburg",
-    "city": "Gothenburg"
-  },
-  "3" : {
-    "id": "3",
-    "name": "Simba",
-    "when": 1536848486882,
-    "title": "My awseome trip to Gothenburg",
-    "text": "Eat and run on the roads in Gothenburg",
-    "city": "Gothenburg"
+    "city": "Copenhagen",
+    "date": 1536848486882,
   }
 }

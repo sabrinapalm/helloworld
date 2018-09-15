@@ -2,7 +2,7 @@ const logo = 'https://image.ibb.co/dr1p0U/logowhitebig.png';
 
 const style = {
   imgStyle: {
-    margin: '335px auto',
+    margin: '200px auto',
     marginBottom: '0px',
   }
 }

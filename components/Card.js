@@ -11,6 +11,7 @@ const styles = {
   card: {
     width: 345,
     maxWidth: 345,
+    marginBottom: 20,
   },
   media: {
     height: 0,
@@ -25,7 +26,7 @@ function SimpleMediaCard(props) {
       <Card className={classes.card}>
         <CardMedia
           className={classes.media}
-          image="https://image.ibb.co/ht6KZp/Getty_Images_456127449_2b37e775bab8.jpg"
+          image="https://9qjzgzbyth-flywheel.netdna-ssl.com/wp-content/uploads/2017/07/smogen-gothenburg.jpg"
           title="Contemplative Reptile"
         />
         <CardContent>
@@ -38,10 +39,10 @@ function SimpleMediaCard(props) {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small" color="primary">
+          <Button size="small" color="default">
             EDIT
           </Button>
-          <Button size="small" color="primary">
+          <Button size="small" color="default">
             DELETE
           </Button>
         </CardActions>

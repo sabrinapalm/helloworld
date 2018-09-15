@@ -1,8 +1,8 @@
 const style = {
   backgroundImage: {
-    backgroundColor: 'hotpink',
-    height : '100vh',
-    backgroundImage: 'url(https://image.ibb.co/d5Dc0U/clouds_fog_forest_9754.jpg)',
+    backgroundColor: '#FFF',
+    height : '60vh',
+    backgroundImage: 'url(https://image.ibb.co/mnsabe/skog.jpg)',
     backgroundSize: 'cover',
     textAlign: 'center'
   }
