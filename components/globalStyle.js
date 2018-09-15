@@ -1,4 +1,4 @@
-const GlobalStyle = ()=> (
+const GlobalStyle = () => (
   <style jsx global>{`
       body {
          box-sizing: border-box;

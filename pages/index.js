@@ -1,53 +1,38 @@
-import Link from 'next/link';
-import GlobalStyle from '../components/globalStyle'
+import GlobalStyle from '../components/GlobalStyle'
+import AddButton from '../components/AddButton'
+import BackgroundImage from '../components/BackgroundImage'
+import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
+import createPalette from '@material-ui/core/styles/createPalette';
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import Logo from '../components/Logo'
 
-const logo = 'https://image.ibb.co/dr1p0U/logowhitebig.png';
-
-const style = {
-  backgroundImage: {
-    backgroundColor: 'hotpink',
-    height : '100vh',
-    backgroundImage: 'url(https://image.ibb.co/d5Dc0U/clouds_fog_forest_9754.jpg)',
-    backgroundSize: 'cover',
-    textAlign: 'center'
+const muiTheme = createMuiTheme({
+  palette: createPalette({
+    primary: {
+      main: "#FFF",
+    },
+    secondary: {
+      main: "#eee",
+      contrastText: '#fff',
+    },
+  }),
+  overrides: {
+    MuiTab: {
+      fullWidth: {
+        maxWidth: 'initial',
+      },
+    },
   },
-  imgStyle: {
-    margin: '335px auto',
-    marginBottom: '0px',
-  },
-  textStyle: {
-    fontFamily:'Helvetica',
-    fontWeight: 'bold',
-    color: 'white',
-    fontSize: '16px',
-    letterSpacing: '1px'
-  },
-  buttonStyle: {
-    width: 200,
-    marginTop: 20,
-    backgroundColor: 'rgba(0, 0, 0, 0.3)',
-    border: '2px solid white',
-    borderRadius: 4,
-    cursor: 'pointer'
-  },
-  buttonText: {
-    fontFamily:'Helvetica',
-    fontWeight: 'bold',
-    color: 'white',
-    letterSpacing: '1px'
-  }
-}
+});
 
 export default (props) => (
-  <div style={style.backgroundImage}>
+  <MuiThemeProvider theme={muiTheme}>
+    <BackgroundImage>
       <GlobalStyle />
-      <img style={style.imgStyle} src={logo} alt="Logo" />
-      <br />
-      <p style={style.textStyle}>{'Johan Augustsson & Sabrina Palm'.toUpperCase()}</p>
-      <Link href='/about'>
-      <button style={style.buttonStyle}>
-        <p style={style.buttonText}>LOREM IPSUM</p>
-      </button>
-      </Link>
-  </div>
+      <Logo />
+        <AddButton>
+        LOREM IPSUM
+        </AddButton>
+    </BackgroundImage>
+  </MuiThemeProvider>
 )
