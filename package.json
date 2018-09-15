@@ -2,11 +2,12 @@
   "name": "hello-world",
   "version": "1.0.0",
   "scripts": {
-    "dev": "node server.js",
+    "dev": "nodemon server.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
+    "@material-ui/core": "^3.0.3",
     "express": "^4.16.3",
     "next": "^6.1.2",
     "react": "^16.5.0",
