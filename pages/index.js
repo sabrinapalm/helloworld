@@ -10,6 +10,23 @@ import Card from '../components/Card'
 import FormDialog from '../components/Form'
 import CityContainer from '../components/CityContainer'
 
+// TODO:
+// För godkänt krävs ska appen uppfylla
+// server-side rendering med Next.js
+// Express används som webbserver
+// appen har webbsidor som stöder CRUD-funktionalitet
+// appen använder ett API för CRUD, som använder querystring och/eller parametrar och levererar dynamisk data i JSON-format
+// varje webbsida är uppbyggd med flera olika React-komponenter
+// minst en webbsida (route) är uppbyggd med många olika React-komponenter
+// appen innehåller formatering (CSS) och bilder
+// appen är funktionell i sitt gränssnitt
+//
+// För väl godkänt ska appen uppfylla
+// inlämnad och redovisad i tid
+// tekniken lifting state eller Redux används
+// appen är funktionell och elegant i sitt gränssnitt
+
+
 
 const muiTheme = createMuiTheme({
   palette: createPalette({
@@ -42,11 +59,6 @@ export default (props) => (
         </AddButton>
     </BackgroundImage>
     <CityContainer>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
       <Card />
       <Card />
       <Card />

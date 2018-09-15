@@ -27,7 +27,7 @@ function SimpleMediaCard(props) {
         <CardMedia
           className={classes.media}
           image="https://9qjzgzbyth-flywheel.netdna-ssl.com/wp-content/uploads/2017/07/smogen-gothenburg.jpg"
-          title="Contemplative Reptile"
+          title="Gothenburg"
         />
         <CardContent>
           <Typography gutterBottom variant="headline" component="h2">
