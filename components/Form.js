@@ -12,13 +12,13 @@ import AddButton from './AddButton';
 
 export default class FormDialog extends React.Component {
   state = {
-    open: true,
+    open: false,
     title: '',
     description: '',
     name: '',
     city: '',
     date: '',
-    imgurl: ''
+    imgurl: '',
   };
 
   handleClickOpen = () => {
@@ -28,7 +28,6 @@ export default class FormDialog extends React.Component {
 
   handleClose = () => {
     const { title, description, name, city, date, imgurl } = this.state;
-    this.setState({ open: false });
     const tripObject = {
       title,
       description,
@@ -39,6 +38,7 @@ export default class FormDialog extends React.Component {
     }
     console.log(tripObject);
     // TODO: skicka obj till db på något märkligt sätt
+    this.setState({ open: false });
   };
 
   handleChange = name => event => {
@@ -51,7 +51,9 @@ export default class FormDialog extends React.Component {
   render() {
     return (
       <div>
-        <AddButton onClick={this.handleClickOpen}>ADD YOUR TRIP</AddButton>
+        <Button color="primary" variant="outlined" onClick={this.handleClickOpen}>
+          ADD YOUR TRIP
+        </Button>
         <Dialog
           open={this.state.open}
           onClose={this.handleClose}
