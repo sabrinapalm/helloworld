@@ -18,11 +18,9 @@ function AddButton(props) {
   const { classes } = props;
   return (
     <div>
-      <Link href="/form">
       <Button variant="outlined" color="primary" size="large" className={classes.button}>
         {props.children}
       </Button>
-      </Link>
     </div>
   );
 }

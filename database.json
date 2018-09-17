@@ -5,7 +5,7 @@
     "description": "Eat and run on the roads in Gothenburg",
     "name": "Sabrina",
     "city": "Gothenburg",
-    "date": 1536848486882,
+    "date": "2018-09-16",
     "imgurl": "https://9qjzgzbyth-flywheel.netdna-ssl.com/wp-content/uploads/2017/07/smogen-gothenburg.jpg"
   },
   "2" : {
@@ -14,7 +14,7 @@
     "description": "Eat and run on the roads in Copenhagen",
     "name": "Johan",
     "city": "Copenhagen",
-    "date": 1536848486882,
+    "date": "2018-08-15",
     "imgurl": "http://www.travelettes.net/wp-content/uploads/2016/08/FU8A2852-2-640x460.jpg"
   }
 }
