@@ -26,16 +26,15 @@ function SimpleMediaCard(props) {
       <Card className={classes.card}>
         <CardMedia
           className={classes.media}
-          image="https://9qjzgzbyth-flywheel.netdna-ssl.com/wp-content/uploads/2017/07/smogen-gothenburg.jpg"
-          title="Gothenburg"
+          image={props.data.imgurl}
+          title={props.data.title}
         />
         <CardContent>
           <Typography gutterBottom variant="headline" component="h2">
-            Gothenburg
+            {props.data.city}
           </Typography>
           <Typography component="p">
-            Quinoa helvetica williamsburg sartorial vinyl ramps meh coloring book man bun paleo.
-            Salvia you probably havent heard of them blog, cold-pressed knausgaard butcher kickstarter. Pinterest artisan +1 knausgaard schlitz.
+            {props.data.description}
           </Typography>
         </CardContent>
         <CardActions>
