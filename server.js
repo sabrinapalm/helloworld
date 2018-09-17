@@ -11,12 +11,7 @@ const handle = app.getRequestHandler()
 app.prepare().then(() => {
   const server = express()
 
-<<<<<<< HEAD
   server.get('/travel/', (req, res) => {
-=======
-  //GET information from database
-  server.get('/alltravels', (req, res) => {
->>>>>>> 4b09475a9e41faf280713eb30d76c3229fc03e66
     let content;
     const readFile = fs.readFile('./database.json', (err, data)=>{
       if ( err ) throw err;
@@ -24,7 +19,6 @@ app.prepare().then(() => {
       console.log(content);
       res.send(content);
     });
-<<<<<<< HEAD
   });
 
 
@@ -58,31 +52,25 @@ app.prepare().then(() => {
     })
   })
 
+  // denna funkar ännu inte.. body blir 0.. wtf...
   server.put('/travel/:id', (req,res) =>{
     const file = './database.json'
-    console.log(req);
     const id = req.params.id;
     const { body } = req;
     console.log("body is: ", req.body);
+    console.log("ID is: ", id);
 
     const readFile = fs.readFile(file, (err, data) => {
       if ( err ) throw err;
       let travels = JSON.parse(data.toString().trim());
       if( travels[id] ) {
-        res.status(200).send("uppdaterad88!")
+
+        res.status(200).send("Uppdataterad!!")
       } else {
         res.status(200).send("finns ej")
       }
     })
   })
-=======
-  })
-
-  // TODO:
-  //POST information to database
-  //UPDATE information in database
-  //DELETE information in database
->>>>>>> 4b09475a9e41faf280713eb30d76c3229fc03e66
 
   server.get('*', (req, res) => {
     return handle(req, res)
