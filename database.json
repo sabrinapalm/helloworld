@@ -1,9 +1,35 @@
 {
-  "13232323" : {
-    "name": "Sabrina",
-    "when": 1536848486882,
-    "title": "My awsome trip to Gothenburg",
-    "text": "Eat and run on the roads in Gothenburg",
-    "city": "Gothenburg",
+  "2":{
+    "name":"Sabrina",
+    "when":1536848486882,
+    "title":"My awsome trip to Gothenburg",
+    "text":"Eat and run on the roads in Gothenburg",
+    "city":"Gothenburg"},
+  "3":{
+    "name":"Johan",
+    "when":1536848486882,
+    "title":"My awsome trip to Gävle",
+    "text":"Eat and run on the roads in Gävle",
+    "city":"Gävle"
+  },
+  "4":{
+    "name":"Sofia",
+    "when":1536848486882,
+    "title":"My awsome trip to Gothenburg",
+    "text":"Eat and run on the roads in Gothenburg",
+    "city":"Gothenburg"},
+  "5":{
+    "name":"Sofia",
+    "when":1536848486882,
+    "title":"My awsome trip to Gävle",
+    "text":"Eat and run on the roads in Gävle",
+    "city":"Gävle"
+  },
+  "6":{
+    "name":"",
+    "when":1536848486882,
+    "title":"My awsome trip to Gävle",
+    "text":"Eat and run on the roads in Gävle",
+    "city":"Gävle"
   }
 }
