@@ -28,7 +28,6 @@ import fetch from 'isomorphic-unfetch'
 // appen är funktionell och elegant i sitt gränssnitt
 
 
-
 const muiTheme = createMuiTheme({
   palette: createPalette({
     primary: {
@@ -54,9 +53,7 @@ const Index = (props) => (
     <BackgroundImage>
       <GlobalStyle />
       <Logo />
-        <AddButton>
-          ADD YOUR TRIP
-        </AddButton>
+        <FormDialog />
     </BackgroundImage>
     <CityContainer>
       { Object.keys(props.data).map( id =>{

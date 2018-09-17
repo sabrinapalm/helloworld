@@ -8,23 +8,52 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import InputAdornment from '@material-ui/core/InputAdornment';
 
+import AddButton from './AddButton';
+
 export default class FormDialog extends React.Component {
   state = {
     open: false,
+    title: '',
+    description: '',
+    name: '',
+    city: '',
+    date: '',
+    imgurl: '',
   };
 
   handleClickOpen = () => {
+    console.log('clickad!');
     this.setState({ open: true });
   };
 
   handleClose = () => {
+    const { title, description, name, city, date, imgurl } = this.state;
+    const tripObject = {
+      title,
+      description,
+      name,
+      city,
+      date,
+      imgurl,
+    }
+    console.log(tripObject);
+    // TODO: skicka obj till db på något märkligt sätt
     this.setState({ open: false });
   };
+
+  handleChange = name => event => {
+    this.setState({
+      [name]: event.target.value,
+    });
+  };
+
 
   render() {
     return (
       <div>
-        <Button color="default" onClick={this.handleClickOpen}>ADD CITY FORM</Button>
+        <Button color="primary" variant="outlined" size="large" onClick={this.handleClickOpen}>
+          ADD YOUR TRIP
+        </Button>
         <Dialog
           open={this.state.open}
           onClose={this.handleClose}
@@ -36,11 +65,12 @@ export default class FormDialog extends React.Component {
               This is where you add the city you visited together with your experience.
             </DialogContentText>
             <TextField
+              required
               autoFocus
               margin="dense"
-              id="title"
               label="Title"
-              type="title"
+              value={this.state.title}
+              onChange={this.handleChange('title')}
               fullWidth
               InputLabelProps={{
                 shrink: true,
@@ -49,9 +79,10 @@ export default class FormDialog extends React.Component {
             <TextField
               required
               margin="dense"
-              id="description"
               label="Description"
-              type="description"
+              value={this.state.description}
+              onChange={this.handleChange('description')}
+              multiline
               fullWidth
               InputLabelProps={{
                 shrink: true,
@@ -60,9 +91,9 @@ export default class FormDialog extends React.Component {
             <TextField
               required
               margin="dense"
-              id="name"
               label="Your name"
-              type="name"
+              value={this.state.name}
+              onChange={this.handleChange('name')}
               fullWidth
               InputLabelProps={{
                 shrink: true,
@@ -71,9 +102,9 @@ export default class FormDialog extends React.Component {
             <TextField
               required
               margin="dense"
-              id="city"
               label="City"
-              type="city"
+              value={this.state.city}
+              onChange={this.handleChange('city')}
               fullWidth
               InputLabelProps={{
                 shrink: true,
@@ -82,18 +113,29 @@ export default class FormDialog extends React.Component {
             <TextField
               required
               margin="dense"
-              id="date"
               label="Date"
               type="date"
+              value={this.state.date}
+              onChange={this.handleChange('date')}
               fullWidth
               InputLabelProps={{
                 shrink: true,
               }}
             />
-
+            <TextField
+              required
+              margin="dense"
+              label="Img url"
+              fullWidth
+              value={this.state.imgurl}
+              onChange={this.handleChange('imgurl')}
+              InputLabelProps={{
+                shrink: true,
+              }}
+            />
           </DialogContent>
           <DialogActions>
-            <Button onClick={this.handleClose} color="default">
+            <Button onClick={this.handleClose} color="secondary" variant="outlined">
               ADD CITY
             </Button>
           </DialogActions>
