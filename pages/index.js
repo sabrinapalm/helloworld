@@ -27,7 +27,6 @@ import CityContainer from '../components/CityContainer'
 // appen är funktionell och elegant i sitt gränssnitt
 
 
-
 const muiTheme = createMuiTheme({
   palette: createPalette({
     primary: {
@@ -50,21 +49,19 @@ const muiTheme = createMuiTheme({
 
 export default (props) => (
   <Fragment>
-  <MuiThemeProvider theme={muiTheme}>
-    <BackgroundImage>
-      <GlobalStyle />
-      <Logo />
-        <AddButton>
-          ADD YOUR TRIP
-        </AddButton>
-    </BackgroundImage>
-    <CityContainer>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-    </CityContainer>
-  </MuiThemeProvider>
+    <MuiThemeProvider theme={muiTheme}>
+      <BackgroundImage>
+        <GlobalStyle />
+        <Logo />
+        <FormDialog />
+      </BackgroundImage>
+      <CityContainer>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </CityContainer>
+    </MuiThemeProvider>
   </Fragment>
 )
