@@ -22,13 +22,13 @@ export default class FormDialog extends React.Component {
   };
 
   handleClickOpen = () => {
-    console.log('clickad!');
     this.setState({ open: true });
   };
 
-  handleClose = () => {
+  addTripToDatabase = () => {
     const { title, description, name, city, date, imgurl } = this.state;
     const tripObject = {
+      id: Math.random().toString(36).substr(2, 9),
       title,
       description,
       name,
@@ -37,7 +37,9 @@ export default class FormDialog extends React.Component {
       imgurl,
     }
     console.log(tripObject);
-    // TODO: skicka obj till db på något märkligt sätt
+    // TODO:
+    // Validering
+    // skicka obj till db på något märkligt sätt
     this.setState({ open: false });
   };
 
@@ -56,18 +58,17 @@ export default class FormDialog extends React.Component {
         </Button>
         <Dialog
           open={this.state.open}
-          onClose={this.handleClose}
+          onClose={this.addTripToDatabase}
           aria-labelledby="form-dialog-title"
         >
-          <DialogTitle id="form-dialog-title">ADD CITY</DialogTitle>
+          <DialogTitle id="form-dialog-title">ADD YOUR TRIP</DialogTitle>
           <DialogContent>
             <DialogContentText>
               This is where you add the city you visited together with your experience.
             </DialogContentText>
             <TextField
-              required
               autoFocus
-              margin="dense"
+              margin="normal"
               label="Title"
               value={this.state.title}
               onChange={this.handleChange('title')}
@@ -77,8 +78,7 @@ export default class FormDialog extends React.Component {
               }}
             />
             <TextField
-              required
-              margin="dense"
+              margin="normal"
               label="Description"
               value={this.state.description}
               onChange={this.handleChange('description')}
@@ -89,8 +89,7 @@ export default class FormDialog extends React.Component {
               }}
             />
             <TextField
-              required
-              margin="dense"
+              margin="normal"
               label="Your name"
               value={this.state.name}
               onChange={this.handleChange('name')}
@@ -100,8 +99,7 @@ export default class FormDialog extends React.Component {
               }}
             />
             <TextField
-              required
-              margin="dense"
+              margin="normal"
               label="City"
               value={this.state.city}
               onChange={this.handleChange('city')}
@@ -111,8 +109,7 @@ export default class FormDialog extends React.Component {
               }}
             />
             <TextField
-              required
-              margin="dense"
+              margin="normal"
               label="Date"
               type="date"
               value={this.state.date}
@@ -123,9 +120,8 @@ export default class FormDialog extends React.Component {
               }}
             />
             <TextField
-              required
-              margin="dense"
-              label="Img url"
+              margin="normal"
+              label="Img URL"
               fullWidth
               value={this.state.imgurl}
               onChange={this.handleChange('imgurl')}
@@ -134,9 +130,9 @@ export default class FormDialog extends React.Component {
               }}
             />
           </DialogContent>
-          <DialogActions>
-            <Button onClick={this.handleClose} color="secondary" variant="outlined">
-              ADD CITY
+          <DialogActions style={{padding: 15, marginTop: -20}}>
+            <Button onClick={this.addTripToDatabase} color="secondary" variant="outlined" fullWidth>
+              ADD YOUR TRIP
             </Button>
           </DialogActions>
         </Dialog>

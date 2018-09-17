@@ -56,10 +56,10 @@ const Index = (props) => (
         <FormDialog />
     </BackgroundImage>
     <CityContainer>
-      { Object.keys(props.data).map( id =>{
-        const item = props.data[id];
-        return <Card data={item} key={id} />
-      })}
+    {Object.keys(props.data).map(id => {
+      const item = props.data[id];
+      return <Card data={item} key={id}/>
+    })}
     </CityContainer>
   </MuiThemeProvider>
   </Fragment>
