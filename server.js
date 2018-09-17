@@ -2,23 +2,29 @@ const express = require('express')
 const next = require('next')
 const fs = require('fs');
 
+const port = 3000
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
 
-app.prepare()
-.then(() => {
+
+app.prepare().then(() => {
   const server = express()
 
+<<<<<<< HEAD
   server.get('/travel/', (req, res) => {
+=======
+  //GET information from database
+  server.get('/alltravels', (req, res) => {
+>>>>>>> 4b09475a9e41faf280713eb30d76c3229fc03e66
     let content;
     const readFile = fs.readFile('./database.json', (err, data)=>{
       if ( err ) throw err;
-      console.log(data);
-      console.log("funkar!", content);
       content = data.toString();
+      console.log(content);
       res.send(content);
     });
+<<<<<<< HEAD
   });
 
 
@@ -69,17 +75,24 @@ app.prepare()
       }
     })
   })
+=======
+  })
+
+  // TODO:
+  //POST information to database
+  //UPDATE information in database
+  //DELETE information in database
+>>>>>>> 4b09475a9e41faf280713eb30d76c3229fc03e66
 
   server.get('*', (req, res) => {
     return handle(req, res)
   })
 
-  server.listen(3000, (err) => {
+  server.listen(port, (err) => {
     if (err) throw err
-    console.log('> Ready on http://localhost:3000')
+    console.log('> Ready on http://localhost:' + port)
   })
-})
-.catch((ex) => {
-  console.error(ex.stack)
-  process.exit(1)
-})
+}).catch((ex) => {
+    console.error(ex.stack)
+    process.exit(1)
+  })

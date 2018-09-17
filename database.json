@@ -1,35 +1,20 @@
 {
-  "2":{
-    "name":"Sabrina",
-    "when":1536848486882,
-    "title":"My awsome trip to Gothenburg",
-    "text":"Eat and run on the roads in Gothenburg",
-    "city":"Gothenburg"},
-  "3":{
-    "name":"Johan",
-    "when":1536848486882,
-    "title":"My awsome trip to Gävle",
-    "text":"Eat and run on the roads in Gävle",
-    "city":"Gävle"
+  "1" : {
+    "id": "1",
+    "title": "My awesome trip to Gothenburg",
+    "description": "Eat and run on the roads in Gothenburg",
+    "name": "Sabrina",
+    "city": "Gothenburg",
+    "date": 1536848486882,
+    "imgurl": "https://9qjzgzbyth-flywheel.netdna-ssl.com/wp-content/uploads/2017/07/smogen-gothenburg.jpg"
   },
-  "4":{
-    "name":"Sofia",
-    "when":1536848486882,
-    "title":"My awsome trip to Gothenburg",
-    "text":"Eat and run on the roads in Gothenburg",
-    "city":"Gothenburg"},
-  "5":{
-    "name":"Sofia",
-    "when":1536848486882,
-    "title":"My awsome trip to Gävle",
-    "text":"Eat and run on the roads in Gävle",
-    "city":"Gävle"
-  },
-  "6":{
-    "name":"",
-    "when":1536848486882,
-    "title":"My awsome trip to Gävle",
-    "text":"Eat and run on the roads in Gävle",
-    "city":"Gävle"
+  "2" : {
+    "id": "2",
+    "title": "My awesome trip to Copenhagen",
+    "description": "Eat and run on the roads in Copenhagen",
+    "name": "Johan",
+    "city": "Copenhagen",
+    "date": 1536848486882,
+    "imgurl": "http://www.travelettes.net/wp-content/uploads/2016/08/FU8A2852-2-640x460.jpg"
   }
 }
