@@ -51,7 +51,7 @@ export default class FormDialog extends React.Component {
   render() {
     return (
       <div>
-        <Button color="primary" variant="outlined" onClick={this.handleClickOpen}>
+        <Button color="primary" variant="outlined" size="large" onClick={this.handleClickOpen}>
           ADD YOUR TRIP
         </Button>
         <Dialog
