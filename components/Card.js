@@ -6,6 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import FormDialogEdit from './FormEdit.js';
 
 const styles = {
   card: {
@@ -20,6 +21,15 @@ const styles = {
 };
 
 function SimpleMediaCard(props) {
+  const deleteTravel = () => {
+    fetch(`http://localhost:3000/travel/${props.data.id}`, {
+       method: 'delete',
+   })
+   .then( ()=>{
+     props.updateData();
+     console.log("data is deleted!.. id: ", props.data.id);
+   })
+  }
   const { classes } = props;
   return (
     <div>
@@ -41,10 +51,10 @@ function SimpleMediaCard(props) {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small" color="default">
-            EDIT
-          </Button>
-          <Button size="small" color="default">
+
+          <FormDialogEdit data={props.data} updateData={props.updateData} />
+
+          <Button size="small" color="default" onClick={deleteTravel}>
             DELETE
           </Button>
         </CardActions>
