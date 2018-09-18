@@ -41,6 +41,7 @@ export default class FormDialogEdit extends React.Component {
     }
 
     let error = {}
+
     if(!this.state.id)
       error.id = true;
 

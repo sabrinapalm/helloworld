@@ -73,7 +73,7 @@ class Index extends React.Component {
           <BackgroundImage>
             <GlobalStyle />
             <Logo />
-              <FormDialog updateData={this.updateData}/>
+            <FormDialog updateData={this.updateData}/>
           </BackgroundImage>
           <CityContainer>
           {Object.keys(data).map(id => {
