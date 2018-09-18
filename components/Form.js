@@ -36,17 +36,15 @@ export default class FormDialog extends React.Component {
       date,
       imgurl,
     }
-    const myTrip = JSON.stringify(tripObject)
-    console.log(myTrip);
-    // TODO:
-    // Validering
-    // skicka obj till db
     fetch('http://localhost:3000/travel/', {
-      method:'post',
-      body: myTrip
-    });
-
-    this.setState({ open: false });
+       method: 'post',
+       body:    JSON.stringify(tripObject),
+       headers: { 'Content-Type': 'application/json' },
+   })
+   .then(() => {
+     this.props.updateData();
+     this.setState({ open: false });
+   });
   };
 
   handleChange = name => event => {

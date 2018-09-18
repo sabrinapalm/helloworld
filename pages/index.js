@@ -46,23 +46,46 @@ const muiTheme = createMuiTheme({
   },
 });
 
-const Index = (props) => (
-  <Fragment>
-  <MuiThemeProvider theme={muiTheme}>
-    <BackgroundImage>
-      <GlobalStyle />
-      <Logo />
-        <FormDialog />
-    </BackgroundImage>
-    <CityContainer>
-    {Object.keys(props.data).map(id => {
-      const item = props.data[id];
-      return <Card data={item} key={id}/>
-    })}
-    </CityContainer>
-  </MuiThemeProvider>
-  </Fragment>
-)
+
+class Index extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      fetched: false,
+      data: this.props.data
+    }
+  }
+
+  updateData = () => {
+    fetch('http://localhost:3000/travel/')
+    .then((response) => {
+      return response.json();
+    }).then((result) => {
+      this.setState({ data: result })
+    })
+  }
+
+  render() {
+    const { data, fetched } = this.state;
+    return (
+      <Fragment>
+        <MuiThemeProvider theme={muiTheme}>
+          <BackgroundImage>
+            <GlobalStyle />
+            <Logo />
+              <FormDialog updateData={this.updateData}/>
+          </BackgroundImage>
+          <CityContainer>
+          {Object.keys(data).map(id => {
+            const item = data[id];
+            return <Card data={item} key={id}/>
+          })}
+          </CityContainer>
+        </MuiThemeProvider>
+      </Fragment>
+    )
+  }
+}
 
 Index.getInitialProps = async function() {
   const res = await fetch('http://localhost:3000/travel/')

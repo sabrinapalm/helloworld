@@ -11,6 +11,7 @@ const handle = app.getRequestHandler()
 
 
 app.prepare().then(() => {
+  const file = './database.json'
   const server = express()
   server.use(bodyParser.json()); // Används för att sätta bodyn
 
@@ -40,7 +41,6 @@ app.prepare().then(() => {
   })
 
   server.delete('/travel/:id', (req,res) =>{
-    const file = './database.json'
     const id = req.params.id;
     const readFile = fs.readFile(file, (err, data) => {
       if ( err ) throw err;
@@ -56,7 +56,6 @@ app.prepare().then(() => {
   })
 
   server.put('/travel/:id', (req,res) =>{
-    const file = './database.json'
     const id = req.params.id;
     const { body } = req;
 
@@ -74,8 +73,15 @@ app.prepare().then(() => {
   })
 
   server.post('/travel/', (req, res) => {
-    console.log('HALALALD');
-    console.log(req.body);
+    const { body } = req;
+    const { id } = body;
+    const readFile = fs.readFile(file, (err, data) => {
+      if ( err ) throw err;
+      let travels = JSON.parse(data.toString().trim());
+        travels[id] = req.body;
+        fs.writeFile(file, JSON.stringify(travels));
+        res.status(200).send("Postad")
+    })
   });
 
   server.get('*', (req, res) => {
