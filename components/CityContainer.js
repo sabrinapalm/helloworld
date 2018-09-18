@@ -3,7 +3,7 @@ const style = {
     backgroundColor: 'white',
     padding: 40,
     display: 'flex',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     flexWrap: 'wrap',
   }
 }

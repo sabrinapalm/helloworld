@@ -33,6 +33,9 @@ function SimpleMediaCard(props) {
           <Typography gutterBottom variant="headline" component="h2">
             {props.data.city}
           </Typography>
+          <Typography variant="body2">
+            {props.data.title}
+          </Typography>
           <Typography component="p">
             {props.data.description}
           </Typography>

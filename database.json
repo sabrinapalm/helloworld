@@ -1,20 +1,29 @@
 {
-  "1" : {
-    "id": "1",
+  "fxes52k3k" : {
+    "fxes52k3k": "1",
     "title": "My awesome trip to Gothenburg",
-    "description": "Eat and run on the roads in Gothenburg",
+    "description": "Lorem ipsum dolor amet literally readymade adaptogen lo-fi, direct trade waistcoat man bun cliche.",
     "name": "Sabrina",
     "city": "Gothenburg",
     "date": "2018-09-16",
     "imgurl": "https://9qjzgzbyth-flywheel.netdna-ssl.com/wp-content/uploads/2017/07/smogen-gothenburg.jpg"
   },
-  "2" : {
-    "id": "2",
+  "f0w15sesg" : {
+    "id": "f0w15sesg",
     "title": "My awesome trip to Copenhagen",
-    "description": "Eat and run on the roads in Copenhagen",
+    "description": "Lorem ipsum dolor amet literally readymade adaptogen lo-fi, direct trade waistcoat man bun cliche.",
     "name": "Johan",
     "city": "Copenhagen",
     "date": "2018-08-15",
     "imgurl": "http://www.travelettes.net/wp-content/uploads/2016/08/FU8A2852-2-640x460.jpg"
+  },
+  "lf4law1ej" : {
+    "id": "lf4law1ej",
+    "title": "My not so awesome trip to Stockholm",
+    "description": "Lorem ipsum dolor amet literally readymade adaptogen lo-fi, direct trade waistcoat man bun cliche.",
+    "name": "John",
+    "city": "Stockholm",
+    "date": "2018-01-15",
+    "imgurl": "https://www.foretagarna.se/contentassets/0ef701b1437c4506aad69fdb8e17a834/stockholm-1824368_1280_fri_pixabay.jpg?maxheight=489&width=734&scale=both&mode=crop&anchor=middlecenter&format=jpg&quality=90"
   }
 }
