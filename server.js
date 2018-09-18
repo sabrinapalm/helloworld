@@ -73,6 +73,11 @@ app.prepare().then(() => {
     })
   })
 
+  server.post('/travel/', (req, res) => {
+    console.log('HALALALD');
+    console.log(req.body);
+  });
+
   server.get('*', (req, res) => {
     return handle(req, res)
   })

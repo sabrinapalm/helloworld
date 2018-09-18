@@ -8,7 +8,7 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import InputAdornment from '@material-ui/core/InputAdornment';
 
-import AddButton from './AddButton';
+import fetch from 'isomorphic-unfetch'
 
 export default class FormDialog extends React.Component {
   state = {
@@ -36,10 +36,16 @@ export default class FormDialog extends React.Component {
       date,
       imgurl,
     }
-    console.log(tripObject);
+    const myTrip = JSON.stringify(tripObject)
+    console.log(myTrip);
     // TODO:
     // Validering
-    // skicka obj till db på något märkligt sätt
+    // skicka obj till db
+    fetch('http://localhost:3000/travel/', {
+      method:'post',
+      body: myTrip
+    });
+
     this.setState({ open: false });
   };
 
