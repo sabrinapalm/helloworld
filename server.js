@@ -1,6 +1,8 @@
 const express = require('express')
 const next = require('next')
 const fs = require('fs');
+const bodyParser = require('body-parser')
+
 
 const port = 3000
 const dev = process.env.NODE_ENV !== 'production'
@@ -10,6 +12,7 @@ const handle = app.getRequestHandler()
 
 app.prepare().then(() => {
   const server = express()
+  server.use(bodyParser.json()); // Används för att sätta bodyn
 
   server.get('/travel/', (req, res) => {
     let content;
@@ -52,19 +55,17 @@ app.prepare().then(() => {
     })
   })
 
-  // denna funkar ännu inte.. body blir 0.. wtf...
   server.put('/travel/:id', (req,res) =>{
     const file = './database.json'
     const id = req.params.id;
     const { body } = req;
-    console.log("body is: ", req.body);
-    console.log("ID is: ", id);
 
     const readFile = fs.readFile(file, (err, data) => {
       if ( err ) throw err;
       let travels = JSON.parse(data.toString().trim());
       if( travels[id] ) {
-
+        travels[id] = req.body;
+        fs.writeFile(file, JSON.stringify(travels));
         res.status(200).send("Uppdataterad!!")
       } else {
         res.status(200).send("finns ej")
