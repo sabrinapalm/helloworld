@@ -74,8 +74,8 @@ class Index extends React.Component {
             <GlobalStyle />
             <Logo />
               <FormDialog updateData={this.updateData}/>
-          </BackgroundImage>
-          <CityContainer>
+            </BackgroundImage>
+            <CityContainer>
           {Object.keys(data).map(id => {
             const item = data[id];
             return <Card data={item} key={id}/>

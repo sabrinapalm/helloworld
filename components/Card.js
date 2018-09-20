@@ -21,12 +21,13 @@ const styles = {
 
 function SimpleMediaCard(props) {
   const { classes } = props;
+  const defaultImg = 'https://image.ibb.co/nxNv4z/pexels_photo_691668.jpg';
   return (
     <div>
       <Card className={classes.card}>
         <CardMedia
           className={classes.media}
-          image={props.data.imgurl}
+          image={props.data.imgurl || defaultImg}
           title={props.data.title}
         />
         <CardContent>
