@@ -78,7 +78,7 @@ class Index extends React.Component {
             <CityContainer>
           {Object.keys(data).map(id => {
             const item = data[id];
-            return <Card data={item} key={id}/>
+            return <Card data={item} key={id} updateData={this.updateData}/>
           })}
           </CityContainer>
         </MuiThemeProvider>

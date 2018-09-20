@@ -10,15 +10,17 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 
 import fetch from 'isomorphic-unfetch'
 
-export default class FormDialog extends React.Component {
+export default class FormDialogEdit extends React.Component {
+
   state = {
     open: false,
-    title: '',
-    description: '',
-    name: '',
-    city: '',
-    date: '',
-    imgurl: '',
+    id:this.props.data.id,
+    title: this.props.data.title,
+    description: this.props.data.description,
+    name: this.props.data.name,
+    city: this.props.data.city,
+    date: this.props.data.date,
+    imgurl: this.props.data.imgurl,
     error: {},
   };
 
@@ -26,36 +28,39 @@ export default class FormDialog extends React.Component {
     this.setState({ open: true });
   };
 
-  addTripToDatabase = () => {
-    const { title, description, name, city, date, imgurl } = this.state;
+  updateTrip = () => {
+    const { id ,title, description, name, city, date, imgurl } = this.state;
     const tripObject = {
-      id: Math.random().toString(36).substr(2, 9),
-      title,
-      description,
-      name,
-      city,
-      date,
-      imgurl,
+      id: this.state.id,
+      title: this.state.title,
+      description: this.state.description,
+      name: this.state.name,
+      city: this.state.city,
+      date: this.state.date,
+      imgurl: this.state.imgurl,
     }
 
     let error = {}
 
-    if(!title)
+    if(!this.state.id)
+      error.id = true;
+
+    if(!this.state.title)
       error.title = true;
 
-    if(!description)
+    if(!this.state.description)
       error.description = true;
 
-    if(!name)
+    if(!this.state.name)
       error.name = true;
 
-    if(!city)
+    if(!this.state.city)
       error.city = true;
 
-    if(!date)
+    if(!this.state.date)
       error.date = true;
 
-    if(!imgurl)
+    if(!this.state.imgurl)
       error.imgurl = true;
 
 
@@ -65,23 +70,14 @@ export default class FormDialog extends React.Component {
       return null;
     }
 
-    fetch('http://localhost:3000/travel/', {
-       method: 'post',
+    fetch(`http://localhost:3000/travel/${this.state.id}`, {
+       method: 'put',
        body:    JSON.stringify(tripObject),
        headers: { 'Content-Type': 'application/json' },
    })
    .then(() => {
      this.props.updateData();
-     this.setState({
-       open: false,
-       title: '',
-       description: '',
-       name: '',
-       city: '',
-       date: '',
-       imgurl: '',
-       error: {},
-     });
+     this.setState({ open: false });
    });
   };
 
@@ -96,15 +92,15 @@ export default class FormDialog extends React.Component {
     const { error } = this.state;
     return (
       <div>
-        <Button color="primary" variant="outlined" size="large" onClick={this.handleClickOpen}>
-          ADD YOUR TRIP
+        <Button size="small" color="default" onClick={this.handleClickOpen}>
+          EDIT
         </Button>
         <Dialog
           open={this.state.open}
           onClose={ ()=>{ this.setState({ open: false, error: {} }) }}
           aria-labelledby="form-dialog-title"
         >
-          <DialogTitle id="form-dialog-title">ADD YOUR TRIP</DialogTitle>
+          <DialogTitle id="form-dialog-title">EDIT YOUR TRIP</DialogTitle>
           <DialogContent>
             <DialogContentText>
               This is where you add the city you visited together with your experience.
@@ -186,8 +182,8 @@ export default class FormDialog extends React.Component {
             />
           </DialogContent>
           <DialogActions style={{padding: 15, marginTop: -20}}>
-            <Button onClick={this.addTripToDatabase} color="secondary" variant="outlined" fullWidth>
-              ADD YOUR TRIP
+            <Button onClick={this.updateTrip} color="secondary" variant="outlined" fullWidth>
+              UPDATE YOUR TRIP
             </Button>
           </DialogActions>
         </Dialog>
